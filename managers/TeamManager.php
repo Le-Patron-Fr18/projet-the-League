@@ -14,12 +14,12 @@ class TeamManager extends AbstractManager
         foreach ($teams as $i => $game)
         {
            $team_temp = new Team;
-            $team_temp->setId($teams["id"]);
-            $team_temp->setName($teams["name"]);
-            $team_temp->setLogo($teams["logo"]);
-            $team_temp->setDescription($teams["description"]);
-            $player_temp->setUrl($player["url"]);
-            $player_temp->setAlt($player["alt"]);
+            $team_temp->setId($team["id"]);
+            $team_temp->setName($team["name"]);
+            $team_temp->setLogo($team["logo"]);
+            $team_temp->setDescription($team["description"]);
+            $team_temp->setUrl($team["url"]);
+            $team_temp->setAlt($team["alt"]);
             $teams_return[] = $team_temp;
         }
         return $teams_return;
@@ -43,8 +43,8 @@ class TeamManager extends AbstractManager
             $team_temp->setName($team["name"]);
             $team_temp->setLogo($team["date"]);
             $team_temp->setDescription($team["team_1"]);
-            $player_temp->setUrl($player["url"]);
-            $player_temp->setAlt($player["alt"]);
+            $team_temp->setUrl($team["url"]);
+            $team_temp->setAlt($team["alt"]);
             return $team_temp;
         }
     }
