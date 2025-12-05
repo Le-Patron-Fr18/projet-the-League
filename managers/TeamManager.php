@@ -39,9 +39,11 @@ class TeamManager extends AbstractManager
         {
             $team_temp->setId($team["id"]);
             $team_temp->setName($team["name"]);
-            $team_temp->setLogo($team["date"]);
-            $team_temp->setDescription($team["team_1"]);
-            return $team_temp;
+            $team_temp->setLogo($team["logo"]);
+            $team_temp->setDescription($team["description"]);
+            {
+                return $team_temp;  
+            }
         }
     }
 }
