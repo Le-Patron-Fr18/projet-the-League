@@ -7,7 +7,7 @@ class GameManager extends AbstractManager
     }
     public function findAll() : array
     {
-        $query = $this->db->prepare('SELECT * FROM players');
+        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON teams.portrait = media.id');
         $query->execute();
         $players = $query->fetchAll(PDO::FETCH_ASSOC);
         $players_return = [];
@@ -19,6 +19,8 @@ class GameManager extends AbstractManager
             $player_temp->setBio($player["bio"]);
             $player_temp->setPortrait($player["portrait"]);
             $player_temp->setTeam($player["team"]);
+            $player_temp->setUrl($player["url"]);
+            $player_temp->setAlt($player["alt"]);
             $players_return[] = $player_temp;
         }
         return $players_return;
@@ -43,6 +45,8 @@ class GameManager extends AbstractManager
             $player_temp->setBio($player["bio"]);
             $player_temp->setPortrait($player["portrait"]);
             $player_temp->setTeam($player["team"]);
+            $player_temp->setUrl($player["url"]);
+            $player_temp->setAlt($player["alt"]);
             return $player_temp;
         }
     }
