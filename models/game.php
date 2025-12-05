@@ -1,5 +1,5 @@
 <?php
-class Game {
+class Games {
     private ?int $id = NULL;
     private ?string $name = NULL;
     private ?string $date = NULL;
