@@ -19,7 +19,7 @@ class GameManager extends AbstractManager
             $game_temp->setDate($game["date"]);
             $game_temp->setTeam1($game["team_1"]);
             $game_temp->setTeam2($game["team_2"]);
-            $game_temp->setwinner($game["winner"]);
+            $game_temp->setWinner($game["winner"]);
             $games_return[] = $game_temp;
         }
         return $games_return;
@@ -44,7 +44,7 @@ class GameManager extends AbstractManager
             $game_temp->setDate($game["date"]);
             $game_temp->setTeam1($game["team_1"]);
             $game_temp->setTeam2($game["team_2"]);
-            $game_temp->setwinner($game["winner"]);
+            $game_temp->setWinner($game["winner"]);
             return $game_temp;
         }
     }
