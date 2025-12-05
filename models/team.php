@@ -1,55 +1,55 @@
 <?php 
-class team {
-    private ?int $id = NULL;
-    private ?string $name = NULL;
-    private ?string $description  = NULL;
-    private ?int $logo = NULL;
-    private ?string $url = NULL;
-    private ?string $alt = NULL;
+class Team {
+    private ?int $id = null;
+    private ?string $name = null;
+    private ?string $description  = null;
+    private ?int $logo = null;
+    private ?string $url = null;
+    private ?string $alt = null;
 
     public function __construct()
     {
     }
 
-    public function getId(): int {
+    public function getId(): ?int {
         return $this->id;
     }
-    public function setId (int $id): void {
+    public function setId (?int $id): void {
         $this->id = $id;
     }
-    
-    public function getname() : string {
+
+    public function getName() : ?string {
         return $this->name;
     }
 
-    public function setname(string $name) : void {
+    public function setName(?string $name) : void {
         $this->name = $name;
     }
-    public function getdescription(): string {
+    public function getDescription(): ?string {
         return $this->description;
     }
-    public function setdescription(string $description): void {
-        $this->$description = $description;
+    public function setDescription(?string $description): void {
+        $this->description = $description;
     }
 
-    public function getlogo(): int {
+    public function getLogo(): ?int {
         return $this->logo;
     }
-    public function setlogo (int $logo):  void {
-        $this->$logo = $logo;
+    public function setLogo (?int $logo):  void {
+        $this->logo = $logo;
     }
 
-    public function getUrl(): int {
+    public function getUrl(): ?string {
         return $this->url;
     }
-    public function setUrl(int $url):  void {
+    public function setUrl(?string $url):  void {
         $this->url = $url;
     }
 
-    public function getAlt(): int {
+    public function getAlt(): ?string {
         return $this->alt;
     }
-    public function setAlt(int $alt):  void {
+    public function setAlt(?string $alt):  void {
         $this->alt = $alt;
     }
 }
