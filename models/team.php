@@ -20,7 +20,11 @@ class player {
     }
 
     public function setname(?string $name) : void {
+<<<<<<< HEAD
         $this->name = $name;
+=======
+        $this->$name = $name;
+>>>>>>> f63083c23b13cf188453dbca1d1d01f33c1c7056
     }
     public function getdescription(): ?string {
         return $this->description;
