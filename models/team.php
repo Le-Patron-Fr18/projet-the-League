@@ -19,8 +19,8 @@ class player {
         return $this->name;
     }
 
-    public function setname(?string $nickname) : void {
-        $this->name = name;
+    public function setname(?string $name) : void {
+        $this->$name = $name;
     }
     public function getdescription(): ?string {
         return $this->description;
