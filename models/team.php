@@ -1,9 +1,12 @@
 <?php 
-class team {
-    private ?int $id = NULL;
-    private ?string $name = NULL;
-    private ?string $description  = NULL;
-    private ?string $logo = NULL;
+class Team {
+    private ?int $id = null;
+    private ?string $name = null;
+    private ?string $description  = null;
+    private ?int $logo = null;
+    private ?string $url = null;
+    private ?string $alt = null;
+
     public function __construct()
     {
     }
@@ -14,31 +17,40 @@ class team {
     public function setId (?int $id): void {
         $this->id = $id;
     }
-    
-    public function getname() : ?string {
+
+    public function getName() : ?string {
         return $this->name;
     }
 
-    public function setname(?string $name) : void {
-<<<<<<< HEAD
+    public function setName(?string $name) : void {
         $this->name = $name;
-=======
-        $this->$name = $name;
->>>>>>> f63083c23b13cf188453dbca1d1d01f33c1c7056
     }
-    public function getdescription(): ?string {
+    public function getDescription(): ?string {
         return $this->description;
     }
-    public function setdescription(?string $description): void {
-        $this->$description = $description;
+    public function setDescription(?string $description): void {
+        $this->description = $description;
     }
 
-    public function getlogo(): ?string {
+    public function getLogo(): ?int {
         return $this->logo;
     }
-    public function setlogo (?string $logo):  void {
-        $this->$logo = $logo;
+    public function setLogo (?int $logo):  void {
+        $this->logo = $logo;
     }
 
+    public function getUrl(): ?string {
+        return $this->url;
+    }
+    public function setUrl(?string $url):  void {
+        $this->url = $url;
+    }
+
+    public function getAlt(): ?string {
+        return $this->alt;
+    }
+    public function setAlt(?string $alt):  void {
+        $this->alt = $alt;
+    }
 }
 ?>
