@@ -7,7 +7,7 @@ class GameManager extends AbstractManager
     }
     public function findAll() : array
     {
-        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON teams.portrait = media.id');
+        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON players.portrait = media.id');
         $query->execute();
         $players = $query->fetchAll(PDO::FETCH_ASSOC);
         $players_return = [];
@@ -27,7 +27,7 @@ class GameManager extends AbstractManager
     }
     public function findOne(int $id) : ?Player
     {
-        $query = $this->db->prepare('SELECT * FROM players WHERE id = :id');
+        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON players.portrait = media.id WHERE players.id = :id');
         $parameters = [
             'id' => $id
         ];
