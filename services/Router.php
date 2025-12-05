@@ -16,18 +16,34 @@ class Routeur
             {
                 $ctrl->teams();
             }
+            elseif($get['route'] === "team")
+            {
+                $ctrl->team();
+            }
             elseif($get['route'] === "players")
             {
                 $ctrl->players();
+            }
+            elseif($get['route'] === "player")
+            {
+                $ctrl->player();
             }
             elseif($get['route'] === "matchs")
             {
                 $ctrl->matchs();
             }
+            elseif($get['route'] === "match")
+            {
+                $ctrl->match();
+            }
+            else
+            {
+                $ctrl->notFound();
+            }
         }
         else 
         {
-
+            $ctrl->home();
         }
     }
 }
