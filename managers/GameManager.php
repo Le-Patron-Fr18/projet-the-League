@@ -48,7 +48,7 @@ class GameManager extends AbstractManager
             return $game_temp;
         }
     }
-    public function findLastDate(int $id) : ?User
+    public function findLastDate(int $id) : ?Game
     {
         $query = $this->db->prepare('SELECT * FROM games ORDER BY date DESC LIMIT 1;');
         $parameters = [
