@@ -28,14 +28,14 @@ class player {
         return $this->bio;
     }
     public function setbio(?string $bio): void {
-        $this->url = $bio;
+        $this->$bio = $bio;
     }
 
     public function getportrait(): ?string {
         return $this->portrait;
     }
     public function setportrait (?string $portrait):  void {
-        $this->alt = $portrait;
+        $this->$portrait = $portrait;
     }
 
     public function getteam(): ?string {
