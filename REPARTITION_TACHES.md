@@ -21,6 +21,7 @@ Louis :
 -game.php
 -GameManager.php
 -GameManager.php
+-layout.phtml
 
 
 
