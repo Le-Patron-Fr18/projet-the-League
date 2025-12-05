@@ -6,6 +6,7 @@ Thomas :
 - pour les commande git / utilisation de Géminis (IA)
 
 Louis : 
+
 Alexis Damien aka Pehibou aka Pehigoat
 
 Charbel : 
