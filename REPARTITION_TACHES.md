@@ -1,6 +1,7 @@
 Repartition des tâches :
 
 Charbel :
+
 -AbstractManager.php
 -player.php
 -team.php
