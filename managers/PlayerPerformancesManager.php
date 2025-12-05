@@ -45,4 +45,5 @@ class PlayerPerformancesManager extends AbstractManager
             $playerperformance_temp->setAssists($playerperformance["assists"]);
             return $playerperformance_temp;
         }
-    }
+    
+ }
