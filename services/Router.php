@@ -1,10 +1,10 @@
 <?php
 
-class Routeur
+class Router
 {
     public function handleRequest(array $get) : void 
     {
-        $ctrl = new UserController;
+        $ctrl = new PageController;
 
         if(isset($get['route']))
         {
