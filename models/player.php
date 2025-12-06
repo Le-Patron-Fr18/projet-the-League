@@ -47,17 +47,17 @@ class player {
         $this->team = $team;
     }
 
-    public function getUrl(): int {
+    public function getUrl(): string {
         return $this->url;
     }
-    public function setUrl(int $url):  void {
+    public function setUrl(string $url):  void {
         $this->url = $url;
     }
 
-    public function getAlt(): int {
+    public function getAlt(): string {
         return $this->alt;
     }
-    public function setAlt(int $alt):  void {
+    public function setAlt(string $alt):  void {
         $this->alt = $alt;
     }
 }
