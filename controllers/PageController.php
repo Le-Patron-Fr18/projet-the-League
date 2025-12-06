@@ -9,7 +9,7 @@ class PageController extends AbstractController
         $gameMan = new GameManager;
         $data = [
             "team" => $teamMan->findOne(1),
-            "players" => $playerMan->findAll(1),
+            "players" => $playerMan->findAllFromTeam(1),
             "highlighted" => [
                 $playerMan->findOne(3),
                 $playerMan->findOne(14),
