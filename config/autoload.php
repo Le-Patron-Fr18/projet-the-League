@@ -11,6 +11,6 @@ require "managers/PlayerPerformancesManager.php";
 require "managers/TeamManager.php";
 
 require "controllers/AbstractController.php";
-require "controllers/DefaultController.php";
+require "controllers/PageController.php";
 
 require "services/Router.php";
