@@ -11,7 +11,7 @@ class TeamManager extends AbstractManager
         $query->execute();
         $teams = $query->fetchAll(PDO::FETCH_ASSOC);
         $teams_return = [];
-        foreach ($teams as $i => $game)
+        foreach ($teams as $i => $team)
         {
            $team_temp = new Team;
             $team_temp->setId($team["id"]);
