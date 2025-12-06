@@ -26,6 +26,4 @@ Louis :
 -layout.phtml
 -PageController.php
 -autoload.php
-
-
-
+-index.php
