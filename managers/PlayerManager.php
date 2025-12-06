@@ -1,5 +1,5 @@
 <?php
-class GameManager extends AbstractManager
+class PlayerManager extends AbstractManager
 {
     public function __construct()
     {
@@ -15,7 +15,7 @@ class GameManager extends AbstractManager
         {
             $player_temp = new Player; 
             $player_temp->setId($player["id"]);
-            $player_temp->setNickname($player["Nickname"]);
+            $player_temp->setNickname($player["nickname"]);
             $player_temp->setBio($player["bio"]);
             $player_temp->setPortrait($player["portrait"]);
             $player_temp->setTeam($player["team"]);
@@ -41,7 +41,7 @@ class GameManager extends AbstractManager
         else
         {
             $player_temp->setId($player["id"]);
-            $player_temp->setNickname($player["Nickname"]);
+            $player_temp->setNickname($player["nickname"]);
             $player_temp->setBio($player["bio"]);
             $player_temp->setPortrait($player["portrait"]);
             $player_temp->setTeam($player["team"]);

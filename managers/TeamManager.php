@@ -26,13 +26,13 @@ class TeamManager extends AbstractManager
     }
     public function findOne(int $id) : ?Team
     {
-        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM teams INNER JOIN media ON teams.portrait = media.id WHERE teams.id = :id');
+        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM teams INNER JOIN media ON teams.logo = media.id WHERE teams.id = :id');
         $parameters = [
             'id' => $id
         ];
         $query->execute($parameters);
         $team = $query->fetch(PDO::FETCH_ASSOC);
-        $team_temp = new Game;
+        $team_temp = new Team;
         if($team === null)
         {
             return null;
@@ -41,8 +41,8 @@ class TeamManager extends AbstractManager
         {
             $team_temp->setId($team["id"]);
             $team_temp->setName($team["name"]);
-            $team_temp->setLogo($team["date"]);
-            $team_temp->setDescription($team["team_1"]);
+            $team_temp->setDescription($team["description"]);
+            $team_temp->setLogo($team["logo"]);
             $team_temp->setUrl($team["url"]);
             $team_temp->setAlt($team["alt"]);
             return $team_temp;

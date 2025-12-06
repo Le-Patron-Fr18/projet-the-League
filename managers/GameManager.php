@@ -48,29 +48,28 @@ class GameManager extends AbstractManager
             return $game_temp;
         }
     }
-    public function findLastDate(int $id) : ?Game
+    public function findLastDate() : ?Game
     {
         $query = $this->db->prepare('SELECT * FROM games ORDER BY date DESC LIMIT 1;');
-        $parameters = [
-            'id' => $id
-        ];
-        $query->execute($parameters);
+        
+        $query->execute();
         $game = $query->fetch(PDO::FETCH_ASSOC);
-        $game_temp = new Game;
-        if($game === null)
+        
+        if(!$game)
         {
             return null;
         }
-        else
-        {
-            $game_temp->setId($game["id"]);
-            $game_temp->setName($game["name"]);
-            $game_temp->setDate($game["date"]);
-            $game_temp->setTeam1($game["team_1"]);
-            $game_temp->setTeam2($game["team_2"]);
-            $game_temp->setwinner($game["winner"]);
-            return $game_temp;
-        }
+       
+        
+        $game_temp = new Game;
+        $game_temp->setId($game["id"]);
+        $game_temp->setName($game["name"]);
+        $game_temp->setDate($game["date"]);
+        $game_temp->setTeam1($game["team_1"]);
+        $game_temp->setTeam2($game["team_2"]);
+        $game_temp->setwinner($game["winner"]);
+        return $game_temp;
+        
     }
 }
 
