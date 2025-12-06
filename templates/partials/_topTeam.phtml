@@ -1,0 +1,18 @@
+<section class="topTeam">
+    <h4>La team à la une</h4>
+    <div class="allTeam">
+        <img src="<?= $team->getUrl() ?>" alt="<?= $team->getAlt() ?>">
+        <div class="teamPlayers">
+            <p><?= $team->getName() ?></p>
+            <p>Les players</p>
+            <div class="players">
+                <?php foreach($players as $player): ?>
+                    <div class="player">
+                        <img src="<?= $player->getUrl() ?>" alt="<?= $team->getAlt() ?>">
+                        <p><?= $player->getName() ?></p>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </div>
+</section>
