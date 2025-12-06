@@ -7,6 +7,14 @@ Charbel :
 -team.php
 -TeamManager.php
 -autoload.php
+-_header.phtml
+-home.phtml
+    -_accueil.phtml
+    -_topTeam.phtml
+    -_topPlayers.phtml
+    -_lastMatch.phtml
+-team.phtml
+-teamS.phtml
 
 
 Thomas :
@@ -15,6 +23,14 @@ Thomas :
 -player_performance.php
 -PlayerPerformancesManager.php
 -autoload.php
+-_header.phtml
+-home.phtml
+    -_accueil.phtml
+    -_topTeam.phtml
+    -_topPlayers.phtml
+    -_lastMatch.phtml
+-player.phtml
+-playerS.phtml
 
 
 Louis : 
@@ -27,3 +43,11 @@ Louis :
 -PageController.php
 -autoload.php
 -index.php
+-_header.phtml
+-home.phtml
+    -_accueil.phtml
+    -_topTeam.phtml
+    -_topPlayers.phtml
+    -_lastMatch.phtml
+-match.phtml
+-matchS.phtml
