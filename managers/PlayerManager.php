@@ -9,9 +9,9 @@ class PlayerManager extends AbstractManager
     {
         $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON players.portrait = media.id');
         $query->execute();
-        $players = $query->fetchAll(PDO::FETCH_ASSOC);
+        $player = $query->fetchAll(PDO::FETCH_ASSOC);
         $players_return = [];
-        foreach ($players as $i => $player)
+        foreach ($player as $i => $player)
         {
             $player_temp = new Player; 
             $player_temp->setId($player["id"]);
