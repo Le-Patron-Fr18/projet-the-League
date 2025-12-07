@@ -43,7 +43,10 @@ header a {
     margin: 0;
 }
 
-<<<<<<< HEAD
+.home img {
+    width: 100px;
+}
+
 /* Styles for playerS page */
 .playerS {
     background-color: var(--darkerGrey);
@@ -128,9 +131,4 @@ header a {
         grid-template-columns: 1fr;
     }
     .player-img { width: 260px; height: 260px; }
-=======
-
-img {
-    width: 100px;
->>>>>>> 1d8dd81d37435c9d86582983a825d2a292d98557
 }
