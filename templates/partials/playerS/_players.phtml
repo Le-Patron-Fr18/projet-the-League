@@ -1,10 +1,23 @@
 <section>
     <div class="playerleague">
-        <?php foreach ($players as $player) : ?> 
-            <img src="<?= $player->getUrl() ?>" alt="<?= $player->getAlt() ?>">
-            <h4><?= $player->getNickname() ?></h4>
-            <p><?= $team->getName() ?></p>
-            <p>Découvrez <?= $player->getNickname() ?></p>
-        <?php endforeach; ?>
+        <?php if (!empty($players) && is_iterable($players)) : ?>
+            <div class="players-grid">
+            <?php foreach ($players as $item) : ?>
+                <?php $player = $item['player']; $team = $item['team']; ?>
+                <article class="player-card">
+                    <div class="player-img">
+                        <img src="<?= htmlspecialchars($player->getUrl()) ?>" alt="<?= htmlspecialchars($player->getAlt()) ?>">
+                    </div>
+                    <div class="player-info">
+                        <h4 class="player-name"><?= htmlspecialchars($player->getNickname()) ?></h4>
+                        <p class="player-team"><?= $team ? htmlspecialchars($team->getName()) : '' ?></p>
+                        <a class="btn-discover" href="index.php?route=player&id=<?= $player->getId() ?>">DÉCOUVREZ <?= htmlspecialchars($player->getNickname()) ?></a>
+                    </div>
+                </article>
+            <?php endforeach; ?>
+            </div>
+        <?php else : ?>
+            <p>Aucun joueur disponible.</p>
+        <?php endif; ?>
     </div>
 </section>

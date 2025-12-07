@@ -44,16 +44,27 @@ class PageController extends AbstractController
         $teamMan = new TeamManager;
         $playerMan = new PlayerManager;
 
+        // Récupère tous les joueurs (ou mieux : ceux de la ligue) et leur équipe associée
+        $rawPlayers = $playerMan->findAll();
+        $players = [];
+        if (!empty($rawPlayers) && is_iterable($rawPlayers)) {
+            foreach ($rawPlayers as $p) {
+                $team = null;
+                try {
+                    $team = $teamMan->findOne($p->getTeam());
+                } catch (Throwable $e) {
+                    $team = null;
+                }
+                $players[] = [
+                    'player' => $p,
+                    'team' => $team,
+                ];
+            }
+        }
+
         $data = [
+            "players" => $players,
             "team" => $teamMan->findOne(1),
-            "players" => $playerMan->findAllFromTeam(1),
-            "playerlist" => [
-                "nickname" => $nickname = $playerMan->findOne(1),
-                "team" => $team = $teamMan->findOne($nickname->getTeam()),
-                "name" => $name = $team->getName(),
-                
-                
-            ],
         ];
         $this->render("playerS", $data);
     }

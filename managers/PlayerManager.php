@@ -9,19 +9,19 @@ class PlayerManager extends AbstractManager
     {
         $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON players.portrait = media.id');
         $query->execute();
-        $player = $query->fetchAll(PDO::FETCH_ASSOC);
+        $players = $query->fetchAll(PDO::FETCH_ASSOC);
         $players_return = [];
-        foreach ($player as $i => $player)
+        foreach ($players as $i => $players)
         {
-            $player_temp = new Player; 
-            $player_temp->setId($player["id"]);
-            $player_temp->setNickname($player["nickname"]);
-            $player_temp->setBio($player["bio"]);
-            $player_temp->setPortrait($player["portrait"]);
-            $player_temp->setTeam($player["team"]);
-            $player_temp->setUrl($player["url"]);
-            $player_temp->setAlt($player["alt"]);
-            $players_return[] = $player_temp;
+            $players_temp = new Player; 
+            $players_temp->setId($players["id"]);
+            $players_temp->setNickname($players["nickname"]);
+            $players_temp->setBio($players["bio"]);
+            $players_temp->setPortrait($players["portrait"]);
+            $players_temp->setTeam($players["team"]);
+            $players_temp->setUrl($players["url"]);
+            $players_temp->setAlt($players["alt"]);
+            $players_return[] = $players_temp;
         }
         return $players_return;
     }
@@ -32,22 +32,22 @@ class PlayerManager extends AbstractManager
             'id' => $id
         ];
         $query->execute($parameters);
-        $player = $query->fetch(PDO::FETCH_ASSOC);
-        $player_temp = new Player;
-        if($player === null)
+        $players = $query->fetch(PDO::FETCH_ASSOC);
+        $players_temp = new Player;
+        if($players === null)
         {
             return null;
         }
         else
         {
-            $player_temp->setId($player["id"]);
-            $player_temp->setNickname($player["nickname"]);
-            $player_temp->setBio($player["bio"]);
-            $player_temp->setPortrait($player["portrait"]);
-            $player_temp->setTeam($player["team"]);
-            $player_temp->setUrl($player["url"]);
-            $player_temp->setAlt($player["alt"]);
-            return $player_temp;
+            $players_temp->setId($players["id"]);
+            $players_temp->setNickname($players["nickname"]);
+            $players_temp->setBio($players["bio"]);
+            $players_temp->setPortrait($players["portrait"]);
+            $players_temp->setTeam($players["team"]);
+            $players_temp->setUrl($players["url"]);
+            $players_temp->setAlt($players["alt"]);
+            return $players_temp;
         }
     }
     public function findAllFromTeam(int $teamId) : array
@@ -64,17 +64,16 @@ class PlayerManager extends AbstractManager
 
         $players_return = [];
 
-        foreach ($players as $player)
+        foreach ($players as $players)
         {
             $p = new Player;
-            $p->setId($player["id"]);
-            $p->setNickname($player["nickname"]);
-            $p->setBio($player["bio"]);
-            $p->setPortrait($player["portrait"]);
-            $p->setTeam($player["team"]);
-            $p->setUrl($player["url"]);
-            $p->setAlt($player["alt"]);
-
+            $p->setId($players["id"]);
+            $p->setNickname($players["nickname"]);
+            $p->setBio($players["bio"]);
+            $p->setPortrait($players["portrait"]);
+            $p->setTeam($players["team"]);
+            $p->setUrl($players["url"]);
+            $p->setAlt($players["alt"]);
             $players_return[] = $p;
         }
 
