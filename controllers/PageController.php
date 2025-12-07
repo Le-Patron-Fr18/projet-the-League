@@ -71,17 +71,33 @@ class PageController extends AbstractController
     
     public function teamS() : void
     {
+        $data = [
+
+        ];
+        $this->render("teamS", $data);
     }
 
     public function team() : void
     {
+        $data = [
+
+        ];
+        $this->render("team", $data);
     }
 
     public function matchS() : void
     {
+        $data = [
+
+        ];
+        $this->render("matchS", $data);
     }
 
     public function match() : void
     {
+        $data = [
+
+        ];
+        $this->render("match", $data);
     }
 }

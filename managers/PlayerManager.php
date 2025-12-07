@@ -7,12 +7,13 @@ class PlayerManager extends AbstractManager
     }
     public function findAll() : array
     {
-        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON players.portrait = media.id');
+        $query = $this->db->prepare('SELECT players.*,media.url,media.alt,teams.name FROM players INNER JOIN media ON players.portrait = media.id INNER JOIN teams ON players.team = teams.id');
         $query->execute();
         $players = $query->fetchAll(PDO::FETCH_ASSOC);
         $players_return = [];
         foreach ($players as $i => $players)
         {
+<<<<<<< HEAD
             $players_temp = new Player; 
             $players_temp->setId($players["id"]);
             $players_temp->setNickname($players["nickname"]);
@@ -22,12 +23,24 @@ class PlayerManager extends AbstractManager
             $players_temp->setUrl($players["url"]);
             $players_temp->setAlt($players["alt"]);
             $players_return[] = $players_temp;
+=======
+            $player_temp = new Player; 
+            $player_temp->setId($player["id"]);
+            $player_temp->setNickname($player["nickname"]);
+            $player_temp->setBio($player["bio"]);
+            $player_temp->setPortrait($player["portrait"]);
+            $player_temp->setTeam($player["team"]);
+            $player_temp->setUrl($player["url"]);
+            $player_temp->setAlt($player["alt"]);
+            $player_temp->setTeamName($player["name"]);
+            $players_return[] = $player_temp;
+>>>>>>> 1d8dd81d37435c9d86582983a825d2a292d98557
         }
         return $players_return;
     }
     public function findOne(int $id) : ?Player
     {
-        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON players.portrait = media.id WHERE players.id = :id');
+        $query = $this->db->prepare('SELECT players.*,media.url,media.alt,teams.name FROM players INNER JOIN media ON players.portrait = media.id INNER JOIN teams ON players.team = teams.id WHERE players.id = :id');
         $parameters = [
             'id' => $id
         ];
@@ -40,6 +53,7 @@ class PlayerManager extends AbstractManager
         }
         else
         {
+<<<<<<< HEAD
             $players_temp->setId($players["id"]);
             $players_temp->setNickname($players["nickname"]);
             $players_temp->setBio($players["bio"]);
@@ -48,6 +62,17 @@ class PlayerManager extends AbstractManager
             $players_temp->setUrl($players["url"]);
             $players_temp->setAlt($players["alt"]);
             return $players_temp;
+=======
+            $player_temp->setId($player["id"]);
+            $player_temp->setNickname($player["nickname"]);
+            $player_temp->setBio($player["bio"]);
+            $player_temp->setPortrait($player["portrait"]);
+            $player_temp->setTeam($player["team"]);
+            $player_temp->setUrl($player["url"]);
+            $player_temp->setAlt($player["alt"]);
+            $player_temp->setTeamName($player["name"]);
+            return $player_temp;
+>>>>>>> 1d8dd81d37435c9d86582983a825d2a292d98557
         }
     }
     public function findAllFromTeam(int $teamId) : array

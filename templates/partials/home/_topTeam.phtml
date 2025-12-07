@@ -1,15 +1,15 @@
 <section class="topTeam">
     <h4>La team à la une</h4>
     <div class="allTeam">
-        <img src="<?= $team->getUrl() ?>" alt="<?= $team->getAlt() ?>">
+        <img src="<?=$data['team']->getUrl()?>" alt="<?=$data['team']->getAlt()?>">
         <div class="teamPlayers">
-            <p><?= $team->getName() ?></p>
+            <p><?=$data['team']->getName()?></p>
             <p>Les players</p>
             <div class="players">
-                <?php foreach($players as $player): ?>
+                <?php foreach($data["players"] as $key => $player): ?>
                     <div class="player">
-                        <img src="<?= $player->getUrl() ?>" alt="<?= $team->getAlt() ?>">
-                        <p><?= $player->getName() ?></p>
+                        <img src="<?= $player->getUrl() ?>" alt="<?= $player->getAlt() ?>">
+                        <p><?= $player->getNickname()  ?></p>
                     </div>
                 <?php endforeach ?>
             </div>
