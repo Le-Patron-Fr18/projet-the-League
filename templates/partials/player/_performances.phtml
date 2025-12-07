@@ -1,0 +1,14 @@
+<section>
+    <h4>Ses performances</h4>
+    <div class="performances">
+        <?php foreach($performances as $performance): ?>
+            <div class="performance">
+                <p><?= $performance->getMatchDate() ?></p>
+                <p>Contre <?= $performance->getOpponent() ?></p>
+                <p>Points <?= $performance->getPoints() ?></p>
+                <p>assists <?= $performance->getAssists() ?></p>
+                <p>vistoire <?= $performance->getVictory() ?></p>
+            </div>
+        <?php endforeach ?>
+    </div>
+</section>
