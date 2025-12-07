@@ -30,8 +30,14 @@ Thomas :
     -_topPlayers.phtml
     -_lastMatch.phtml
 -player.phtml
+    -_header.phtml
+    -_performances.phtml
+    -_players.phtml
+    -_team.phtml
 -playerS.phtml
-
+    -_header.phtml
+    -_players.phtml
+    -_titre.phtml
 
 Louis : 
 
