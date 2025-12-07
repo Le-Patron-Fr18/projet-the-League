@@ -47,6 +47,10 @@ header a {
     width: 100px;
 }
 
+.matchS img {
+    width: 100px;
+}
+
 /* Styles for playerS page */
 .playerS {
     background-color: var(--darkerGrey);

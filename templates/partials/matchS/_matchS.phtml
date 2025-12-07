@@ -1,0 +1,13 @@
+<section>
+    <h4>Les Matchs</h4>
+    <?php foreach($data as $key => $game): ?>
+        <h5><?=$game['game']->getName()?></h5>
+        <p><?=$game['game']->getDate()?></p>
+        <div>
+            <img src="<?=$game['team_1']->getUrl()?>" alt="<?=$game['team_1']->getAlt()?>">
+            <img src="<?=$game['team_2']->getUrl()?>" alt="<?=$game['team_2']->getAlt()?>">
+        </div>
+        <a href="index.php?route=match&id=<?=$game['game']->getId()?>">détail du match</a>
+        <p> Winner : <?=$game['winner']->getName()?></p>
+    <?php endforeach ?>
+</section>

@@ -7,7 +7,7 @@ class GameManager extends AbstractManager
     }
     public function findAll() : array
     {
-        $query = $this->db->prepare('SELECT * FROM games');
+        $query = $this->db->prepare('SELECT * FROM games ORDER BY date DESC');
         $query->execute();
         $games = $query->fetchAll(PDO::FETCH_ASSOC);
         $games_return = [];

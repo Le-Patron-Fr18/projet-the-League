@@ -34,7 +34,7 @@ class Router
             }
             elseif($get['route'] === "match")
             {
-                $ctrl->match();
+                $ctrl->match($get['id']);
             }
             else
             {

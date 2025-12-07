@@ -58,4 +58,7 @@ Louis :
     -_topPlayers.phtml
     -_lastMatch.phtml
 -match.phtml
+    -_match.phtml
+    -_perf.phtml
 -matchS.phtml
+    -_matchS.phtml

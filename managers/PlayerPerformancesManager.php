@@ -46,4 +46,25 @@ class PlayerPerformancesManager extends AbstractManager
             return $playerperformance_temp;
         }
     }
+    public function findAllFromTeam(int $id) : array
+    {
+        $query = $this->db->prepare('SELECT * FROM playerperformance');
+        $parameters = [
+            'id' => $id
+        ];
+        $query->execute($parameters);
+        $playerperformance = $query->fetchAll(PDO::FETCH_ASSOC);
+        $playerperformance_return = [];
+        foreach ($playerperformance as $i => $playerperformance)
+        {
+            $playerperformance_temp = new Player_performance; 
+            $playerperformance_temp->setId($playerperformance["id"]);
+            $playerperformance_temp->setPlayer($playerperformance["player"]);
+            $playerperformance_temp->setGame($playerperformance["game"]);
+            $playerperformance_temp->setPoints($playerperformance["points"]);
+            $playerperformance_temp->setAssists($playerperformance["assists"]);
+            $playerperformance_return[] = $playerperformance_temp;
+        }
+        return $playerperformance_return;
+    }
 }

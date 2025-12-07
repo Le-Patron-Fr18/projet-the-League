@@ -25,6 +25,46 @@ class PageController extends AbstractController
         $this->render("home", $data);
     }
 
+    public function matchS() : void
+    {
+        $teamMan = new TeamManager;
+        $gameMan = new GameManager;
+        $games = $gameMan->findAll();
+        $data = [];
+
+        foreach($games as $game)
+        {
+            $data[] = [
+                "game" => $game,
+                "team_1" => $team_1 = $teamMan->findOne($game->getTeam1()),
+                "team_2" => $team_2 = $teamMan->findOne($game->getTeam2()),
+                "winner" => $winner = $teamMan->findOne($game->getWinner())
+            ];  
+        }
+    
+        $this->render("matchS", $data);
+    }
+
+    public function match(int $id) : void
+    {
+        $teamMan = new TeamManager;
+        $gameMan = new GameManager;
+        $playerPerfMan = new PlayerPerformancesManager;
+        $playerMan = new PlayerManager;
+        $data = [
+            "game" => $game = $gameMan->findOne($id),
+            "team_1" => $team_1 = $teamMan->findOne($game->getTeam1()),
+            "team_2" => $team_2 = $teamMan->findOne($game->getTeam2()),
+            "winner" => $winner = $teamMan->findOne($game->getWinner()),
+            "performances" => [
+                "perfs"    => $performances = $playerPerfMan->findAllFromGame($id),
+                "players"  => [],
+            ],
+            
+        ];
+        $this->render("match", $data);
+    }
+
     public function player() : void
     {
         $playerperformancesMan = new PlayerManager;
@@ -85,19 +125,4 @@ class PageController extends AbstractController
         $this->render("team", $data);
     }
 
-    public function matchS() : void
-    {
-        $data = [
-
-        ];
-        $this->render("matchS", $data);
-    }
-
-    public function match() : void
-    {
-        $data = [
-
-        ];
-        $this->render("match", $data);
-    }
 }
