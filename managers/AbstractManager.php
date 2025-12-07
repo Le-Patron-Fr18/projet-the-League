@@ -7,12 +7,12 @@ abstract class AbstractManager
     public function __construct()
     {
         $host = "localhost";
-        $port = "3306";
-        $dbname = "Coda_prjet_tl";
+        $port = "8888";
+        $dbname = "Coda_projet_TL";
         $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
 
         $user = "root";
-        $password = "";
+        $password = "root";
 
         $this->db = new PDO(
             $connexionString,
