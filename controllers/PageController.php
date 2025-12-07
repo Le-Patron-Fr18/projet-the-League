@@ -57,4 +57,20 @@ class PageController extends AbstractController
         ];
         $this->render("playerS", $data);
     }
+    
+    public function teamS() : void
+    {
+    }
+
+    public function team() : void
+    {
+    }
+
+    public function matchS() : void
+    {
+    }
+
+    public function match() : void
+    {
+    }
 }

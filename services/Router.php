@@ -14,7 +14,7 @@ class Router
             }
             elseif($get['route'] === "teams")
             {
-                $ctrl->teams();
+                $ctrl->teamS();
             }
             elseif($get['route'] === "team")
             {
@@ -22,7 +22,7 @@ class Router
             }
             elseif($get['route'] === "players")
             {
-                $ctrl->players();
+                $ctrl->playerS();
             }
             elseif($get['route'] === "player")
             {
@@ -30,7 +30,7 @@ class Router
             }
             elseif($get['route'] === "matchs")
             {
-                $ctrl->matchs();
+                $ctrl->matchS();
             }
             elseif($get['route'] === "match")
             {
