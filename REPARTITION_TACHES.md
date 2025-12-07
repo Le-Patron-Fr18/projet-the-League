@@ -6,6 +6,7 @@ Charbel :
 -player.php
 -team.php
 -TeamManager.php
+-PageController.php
 -autoload.php
 -_header.phtml
 -home.phtml
@@ -22,6 +23,7 @@ Thomas :
 -AbstractManager.php
 -player_performance.php
 -PlayerPerformancesManager.php
+-PageController.php
 -autoload.php
 -_header.phtml
 -home.phtml
