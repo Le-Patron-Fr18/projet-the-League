@@ -1,0 +1,10 @@
+<section>
+    <h4>Les players à la une</h4>
+    <div class="topPlayers">
+        <?php foreach($data['highlighted'] as $key => $topPlayer): ?>
+            <img src="<?= $topPlayer->getUrl() ?>" alt="<?= $topPlayer->getAlt() ?>">
+            <h6><?= $topPlayer->getNickname() ?></h6>
+            <p><?= $topPlayer->getTeamName() ?></p>
+        <?php endforeach ?>
+    </div>
+</section>
