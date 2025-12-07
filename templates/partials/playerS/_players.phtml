@@ -1,8 +1,10 @@
 <section>
-    <?php foreach ($players as $player) : ?> 
-    <img src="<?= $player->getUrl() ?>" alt="<?= $player->getAlt() ?>">
-    <h4><?= $player->getNickname() ?></h4>
-    <p><?= $team->getName() ?></p>
-    <p>Découvrez <?= $player->getNickname() ?></p>
-    <?php endforeach; ?>
+    <div class="playerleague">
+        <?php foreach ($players as $player) : ?> 
+            <img src="<?= $player->getUrl() ?>" alt="<?= $player->getAlt() ?>">
+            <h4><?= $player->getNickname() ?></h4>
+            <p><?= $team->getName() ?></p>
+            <p>Découvrez <?= $player->getNickname() ?></p>
+        <?php endforeach; ?>
+    </div>
 </section>
