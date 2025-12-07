@@ -7,7 +7,7 @@ class PlayerPerformancesManager extends AbstractManager
     }
     public function findAll() : array
     {
-        $query = $this->db->prepare('SELECT * FROM playerperformance');
+        $query = $this->db->prepare('SELECT * FROM player_performance');
         $query->execute();
         $playerperformance = $query->fetchAll(PDO::FETCH_ASSOC);
         $playerperformance_return = [];
@@ -25,7 +25,7 @@ class PlayerPerformancesManager extends AbstractManager
     }
     public function findOne(int $id) : ?Player_performance
     {
-        $query = $this->db->prepare('SELECT * FROM playerperformance WHERE id = :id');
+        $query = $this->db->prepare('SELECT * FROM player_performance WHERE id = :id');
         $parameters = [
             'id' => $id
         ];
@@ -46,9 +46,9 @@ class PlayerPerformancesManager extends AbstractManager
             return $playerperformance_temp;
         }
     }
-    public function findAllFromTeam(int $id) : array
+    public function findAllFromGame(int $id) : array
     {
-        $query = $this->db->prepare('SELECT * FROM playerperformance');
+        $query = $this->db->prepare('SELECT * FROM player_performance WHERE game = :id');
         $parameters = [
             'id' => $id
         ];

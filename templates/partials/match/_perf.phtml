@@ -1,0 +1,30 @@
+<section>
+    <h4>Les Performances</h4>
+    <div>
+        <table class="perf">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Team</th>
+                <th>Points</th>
+                <th>Assits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($data as $key => $game) : ?>
+            <tr>
+                <td>
+                    <?=$data['performances']['players']->getNickname()?>
+                </td>
+                <td>
+                    <?php echo $user['username']; ?>
+                </td>
+                <td>
+                    <?php echo $user['email']; ?>
+                </td>
+            </tr>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+    </div>
+</section>

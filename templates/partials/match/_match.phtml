@@ -1,3 +1,8 @@
 <section>
-    <h4>zizi</h4>
+    <h4><?=$game->getName()?></h4>
+    <p><?=$game->getDate()?></p>
+    <div>
+        <img src="<?=$data['team_1']->getUrl()?>" alt="<?=$data['team_1']->getAlt()?>">
+        <img src="<?=$data['team_2']->getUrl()?>" alt="<?=$data['team_2']->getAlt()?>">
+    </div>
 </section>
