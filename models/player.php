@@ -7,6 +7,7 @@ class player {
     private ?int $team = NULL;
     private ?string $url = NULL;
     private ?string $alt = NULL;
+    private ?string $teamname = NULL;
 
     public function __construct()
     {
@@ -58,6 +59,13 @@ class player {
         return $this->alt;
     }
     public function setAlt(string $alt):  void {
+        $this->alt = $alt;
+    }
+
+    public function getTeamName(): string {
+        return $this->alt;
+    }
+    public function setTeamName(string $alt):  void {
         $this->alt = $alt;
     }
 }

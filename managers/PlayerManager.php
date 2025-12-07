@@ -7,7 +7,7 @@ class PlayerManager extends AbstractManager
     }
     public function findAll() : array
     {
-        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON players.portrait = media.id');
+        $query = $this->db->prepare('SELECT players.*,media.url,media.alt,teams.name FROM players INNER JOIN media ON players.portrait = media.id INNER JOIN teams ON players.team = teams.id');
         $query->execute();
         $player = $query->fetchAll(PDO::FETCH_ASSOC);
         $players_return = [];
@@ -21,13 +21,14 @@ class PlayerManager extends AbstractManager
             $player_temp->setTeam($player["team"]);
             $player_temp->setUrl($player["url"]);
             $player_temp->setAlt($player["alt"]);
+            $player_temp->setTeamName($player["name"]);
             $players_return[] = $player_temp;
         }
         return $players_return;
     }
     public function findOne(int $id) : ?Player
     {
-        $query = $this->db->prepare('SELECT *,media.url,media.alt FROM players INNER JOIN media ON players.portrait = media.id WHERE players.id = :id');
+        $query = $this->db->prepare('SELECT players.*,media.url,media.alt,teams.name FROM players INNER JOIN media ON players.portrait = media.id INNER JOIN teams ON players.team = teams.id WHERE players.id = :id');
         $parameters = [
             'id' => $id
         ];
@@ -47,6 +48,7 @@ class PlayerManager extends AbstractManager
             $player_temp->setTeam($player["team"]);
             $player_temp->setUrl($player["url"]);
             $player_temp->setAlt($player["alt"]);
+            $player_temp->setTeamName($player["name"]);
             return $player_temp;
         }
     }
