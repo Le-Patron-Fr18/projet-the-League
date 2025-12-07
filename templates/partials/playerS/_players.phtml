@@ -1,6 +1,8 @@
 <section>
-    <img src = "playserS" alt="players">
-    <h4>nom des players</h4>
-    <p>nom de la team</p>
-    <p>Découvrez "nom du players"</p>
+    <?php foreach ($players as $player) : ?> 
+    <img src="<?= $player->getUrl() ?>" alt="<?= $player->getAlt() ?>">
+    <h4><?= $player->getNickname() ?></h4>
+    <p><?= $team->getName() ?></p>
+    <p>Découvrez <?= $player->getNickname() ?></p>
+    <?php endforeach; ?>
 </section>
