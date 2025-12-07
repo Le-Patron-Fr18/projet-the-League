@@ -62,3 +62,4 @@ Louis :
     -_perf.phtml
 -matchS.phtml
     -_matchS.phtml
+-style.css des pages que j'ai faites ci dessus (rien en gros sauf le header et quelques images)
